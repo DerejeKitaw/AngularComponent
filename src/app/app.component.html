@@ -1,11 +1,11 @@
-app works
 <ul class="list-inline">
   <li *ngFor="let question of questions; let i=index"
   [ngClass]="{'selected': true }"
   >
-    {{i}}
+    <!--{{i}}
     {{question.title}}
-    {{question.drawType}}
-<question></question>
+    {{question.drawType}}-->
+<question 
+  [question]="question"></question>
   </li>
 </ul>
