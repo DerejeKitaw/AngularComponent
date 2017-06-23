@@ -1,0 +1,21 @@
+.list-inline {
+    margin-top: 2em;
+    justify-content: center;
+    display: flex;
+    li {
+        display: inline-block;
+        widows: 30px;
+        height: 30px;
+        background: white;
+        border-radius: 40px;
+        text-align: center;
+        font-size: 1.2em;
+        margin-left: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+        transition: all .3s;
+        &.selected{
+            background: lightblue;
+        }
+    }
+}
