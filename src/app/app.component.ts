@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { DUMMY_DATA } from "app/data/dummy-data";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  questions = DUMMY_DATA;
 }
