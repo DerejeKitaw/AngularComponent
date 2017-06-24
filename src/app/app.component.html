@@ -1,5 +1,35 @@
-<carousel [interval]="-1" >
-    <slide *ngFor="let question of questions">
-        <app-question [question]="question" ></app-question>
-    </slide>
-</carousel>
+<div class="option">
+  <label> Auto next slide</label>
+  <!--Need to add FormsModule to use ngModel-->
+  <input #ctrl="ngModel" [(ngModel)]='option' type='checkbox'>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-xs-2"></div>
+    <div class="col-md-8 col-xs-10">
+      <!--carousel from ngx component-->
+      <carousel [interval]="-1" [(activeSlide)]="activeSlideIndex" *ngIf="!showSummary">
+        <slide *ngFor="let question of questions; let i = index">
+          <app-question
+            class="group"
+            *ngIf="activeSlideIndex == i"
+            [question]="question"
+            (selectedChoice)="onSelected(i, $event)"
+            [selected]="selections[i]"></app-question>
+          <ul class="list-inline">
+            <li
+              *ngFor="let question of questions; let i = index"
+              (click)="changeActiveSlide(i)"
+              [ngClass]="{'selected': selections[i] != null}">
+              <span [hidden]="selections[i] != null">{{i}}</span>
+              <img class="choice-selected" [hidden]="selections[i] == null" src="/assets/images/checked.png">
+            </li>
+          </ul>
+        </slide>
+      </carousel>
+
+      <app-summary *ngIf="showSummary" [summary]="getSummary()" (resetQuiz)="resetQuiz()"></app-summary>
+    </div>
+  </div>
+</div>
