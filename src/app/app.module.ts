@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ChoiceComponent } from './components/choice/choice.component';
+import { CarouselModule } from "ngx-bootstrap/carousel";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ChoiceComponent } from './components/choice/choice.component';
     ChoiceComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
