@@ -1,0 +1,22 @@
+<div class="container-fluid">
+<carousel [interval]="-1" [(activeSlide)]="activeSlideIndex" *ngIf="!showSummary">
+        <slide *ngFor="let item of words; let i = index">
+          <app-words-card
+            class="group"
+            *ngIf="activeSlideIndex == i"
+            [question]="item"
+            (selectedChoice)="onSelected(i, $event)"
+            [selected]="selections[i]"></app-words-card>
+
+          <ul class="list-inline">
+            <li
+              *ngFor="let item of words; let i = index"
+              (click)="changeActiveSlide(i)"
+              [ngClass]="{'selected': selections[i] != null}">
+              <span [hidden]="selections[i] != null">{{i}}</span>
+              <img class="choice-selected" [hidden]="selections[i] == null" src="/assets/images/checked.png">
+            </li>
+          </ul>
+        </slide>
+      </carousel>
+</div>

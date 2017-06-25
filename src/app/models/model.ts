@@ -8,3 +8,8 @@ export class Choice{
     imageUrl: string;
     summary: string;
 }
+
+export class Words{
+    word: string;
+    imageUrl: string;
+}

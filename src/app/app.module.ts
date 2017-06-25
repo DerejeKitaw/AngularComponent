@@ -9,6 +9,8 @@ import { CarouselModule } from "ngx-bootstrap/carousel";
 import { SummaryComponent } from './components/summary/summary.component';
 import { TestComponent } from './test/test.component';
 import { CardComponent } from './card/card.component';
+import { WordsCardComponent } from './words-card/words-card.component';
+import { Test2Component } from './test2/test2.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CardComponent } from './card/card.component';
     ChoiceComponent,
     SummaryComponent,
     TestComponent,
-    CardComponent
+    CardComponent,
+    WordsCardComponent,
+    Test2Component
   ],
   imports: [
     BrowserModule,
