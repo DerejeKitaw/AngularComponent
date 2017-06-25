@@ -10,7 +10,7 @@ export class ChoiceComponent implements OnInit {
   // choise component will
   // get information about choice , if selected and draw tipe
   @Input() choice :Choice;
-  @Input() isSelected :Choice;
+  @Input() isSelected ;
   @Input() drawType: string;
   
   constructor() { }

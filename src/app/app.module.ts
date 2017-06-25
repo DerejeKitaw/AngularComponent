@@ -7,13 +7,17 @@ import { QuestionComponent } from './components/question/question.component';
 import { ChoiceComponent } from './components/choice/choice.component';
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { SummaryComponent } from './components/summary/summary.component';
+import { TestComponent } from './test/test.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
     ChoiceComponent,
-    SummaryComponent
+    SummaryComponent,
+    TestComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
